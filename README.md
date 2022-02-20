@@ -1,26 +1,12 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Проект post - моя зачетная работа по дисциплине "Языки Интрнет Программирования" в МГТУ им. Н. Э. Баумана. Февраль 2022 года.
 
-Things you may want to cover:
+Это макет социалной сети на Ruby On Rails, использующий основной функционал Instagram.
 
-* Ruby version
+На 20.02.2022 в нем добавлены следующие возможности:
+- Создание постов.
+- Создание, удаление, редактирование аккаунтов.
+- Возможность менять локализацию с главной страницы.
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-# post
 # post
