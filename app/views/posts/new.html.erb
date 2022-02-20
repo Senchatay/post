@@ -1,0 +1,9 @@
+<h1><%=t :new_post%></h1>
+
+<%= render "form", post: @post %>
+
+<br>
+
+<div>
+  <%= link_to t(:back), :back , method: :post, class: "btn btn-secondary" %>
+</div>

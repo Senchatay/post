@@ -1,0 +1,91 @@
+<head>
+<style>
+    .ajax-div{
+        background: #fff;
+        margin-top: 10px;
+        padding: 15px ;
+        border: 1px solid #ddd;
+        border-radius: 3px;
+      }
+</style>
+<script>
+    index_url = location.protocol + "//" + location.host + "/dashboard"
+    function send_query_ru() {
+      param_str = "?locale=ru"
+      location.href=index_url+param_str;
+      return false;
+    }
+    function send_query_en() {
+      param_str = "?locale=en"
+      location.href=index_url+param_str;
+      return false;
+    }
+</script>
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-8">
+            <div class="text-center"><%= "#{@posts.size.to_s} "%><%=t :active_posts%></div>
+            <% @posts.each do |post| %>
+                <div class="insta-post">
+                    <div class="post-meta border_top">
+                        <%if post&.account&.image&.present?%>
+                            <%= link_to (image_tag post.account.image.thumb.url, class: "img-circle"), profile_url(post.account.username) %>
+                            <%= link_to post.account.username, profile_url(post.account.username), class: "text-black" %>
+                        <%else%>
+                            <%if post&.account.present?%>
+                                <%= profile_picture(@account, 50)%>
+                                <%= link_to post.account.username, profile_url(post.account.username), class: "text-black" %>
+                            <%end%>
+                        <%end%>
+                    </div>
+                    
+                    <%= image_tag post.image.dashboard.url, class: 'img img-fluid with-border' %>
+                    
+                    <div class="post-details border_bot">
+                        <p><strong><%= post.title %></strong><br/>
+                        <%= post.text %></p>
+                        <p class="text-muted"><%= time_ago_in_words post.created_at %></p>
+                    </div>
+                </div>
+            <% end %>
+        </div>
+        <div class="col-4">
+            <div class="account-summary">
+            <p>
+                <%if current_account.image.present?%>
+                    <%= link_to (image_tag current_account.image.thumb.url, class: "img-circle"), profile_url(current_account.username) %>
+                <%else%>
+                    <%= profile_picture(@account, 50)%>
+                <%end%>
+                <strong><%= link_to current_account.username, profile_url(current_account.username), class: "text-black" %></strong>
+            </p>
+                <%= current_account.full_name %> </p>
+            </div>
+            <div class="follower-suggestions">
+                <% if @follower_suggestions.present? %>
+                        <!--<%=link_to "Посмотреть все", "#" ,class:"float-right text-dark"  %>-->
+                        <p class="text-muted"><%=t :recomendations%></p>
+                        <%= render "accounts/follower_suggestions"%>
+                <% else %>
+                        <p class="text-muted"><%=t :recomendations_nil%></p>
+                <% end %>
+            </div>
+            <div onclick="send_query();" class="ajax-div text-center col-8">
+                <p class="text-center"><strong><%=t :switch_language%></strong><p>
+                <ul class="list-group">
+                <li class="list-group-item">
+                    <input class="form-check-input me-1" type="checkbox" onclick="send_query_ru();">
+                    RU
+                </li>
+                <li class="list-group-item">
+                    <input class="form-check-input me-1" type="checkbox" onclick="send_query_en();">
+                    EN
+                </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+</body>

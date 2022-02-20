@@ -1,0 +1,32 @@
+
+<%= form_with(model: post) do |form| %>
+  <% if post.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(post.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+      <ul>
+        <% post.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="container">
+    <div class="field">
+      <%= form.file_field :image, class: "form-control" %>
+      <%= form.hidden_field :image_cache %>
+    </div>
+    <div>
+      <%= form.label t(:post_title), style: "display: block" %>
+      <%= form.text_field :title, class: "form-control" %>
+    </div>
+
+    <div>
+      <%= form.label t(:text), style: "display: block" %>
+      <%= form.text_area(:text,rows:7, class: "form-control") %>
+    </div>
+    <div class="actions">
+    <%= form.submit t(:public), class: "btn btn-success" %>  
+    </div>
+  </div>
+<% end %>

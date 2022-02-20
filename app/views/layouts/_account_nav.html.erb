@@ -1,0 +1,12 @@
+<li class="nav-item">
+  <%= link_to t(:dashboard), dashboard_url, class: "nav-link active" %>
+</li>
+<li class="nav-item">
+  <%= link_to t(:new_post), new_post_url, class: "nav-link" %>
+</li>
+<li class="nav-item">
+  <%= link_to t(:my_profile),profile_url(current_account.username), class: "nav-link" %>
+</li>  
+<li class="nav-item">
+  <%= link_to t(:sign_out), destroy_account_session_path, method: :delete, class: "nav-link" %>
+</li>  

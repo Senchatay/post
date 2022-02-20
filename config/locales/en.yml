@@ -1,0 +1,87 @@
+# Files in the config/locales directory are used for internationalization
+# and are automatically loaded by Rails. If you want to use locales other
+# than English, add the necessary files in this directory.
+#
+# To use the locales, use `I18n.t`:
+#
+#     I18n.t "hello"
+#
+# In views, this is aliased to just `t`:
+#
+#     <%= t("hello") %>
+#
+# To use a different locale, set it with `I18n.locale`:
+#
+#     I18n.locale = :es
+#
+# This would use the information in config/locales/es.yml.
+#
+# The following keys must be escaped otherwise they will not be retrieved by
+# the default I18n backend:
+#
+# true, false, on, off, yes, no
+#
+# Instead, surround them with single quotes.
+#
+# en:
+#   "true": "foo"
+#
+# To learn more, please read the Rails Internationalization guide
+# available at https://guides.rubyonrails.org/i18n.html.
+
+en:
+  hello: "Hello world"
+
+  Project_name: "Social_network"
+  Main_Title: "Credit work. Latyshev Arseniy, IU6-35B"
+  Title: "Credit work for LIP"
+  sign_in: "Sign In"
+  new_confirmation: "Didn't receive confirmation instructions?"
+  new_unlock: "Didn't receive unlock instructions?"
+  leave_blank: "leave blank if you don't want to change it"
+  cur_pas_for: "we need your current password to confirm your changes"
+  sign_up_to_continue: "Please sign in or sign up to continue."
+#Вход/регистрация
+  sign_in: "Sign In"
+  remember_me: "Remember me"
+  sign_up: "Sign Up"
+  sign_out: "Sign Out"
+#Слова/фразы
+  minimum: "minimum"
+  symbols: "symbols"
+  active_posts: "active posts detected"
+  recomendations: "Recomendation for you"
+  recomendations_nil: "We don't have any recomendations for you now"
+  recently_created: "Recently create"
+  following_by_smb: "Following by other users"
+  leave_blank: "leave blank if don't want to change"
+  cur_pas_for: "your current password needs to confirm changes"
+  cancel_my_account: "Cancel my account"
+  edit: "Edit"
+  new_post: "New post"
+  post_title: "Title"
+  text: "Text"
+  public: "Confirm"
+#Хэдер
+  dashboard: "Dashboard"
+  my_profile: "My profile"
+#Аккаунт
+  username: "Username"
+  first_name: "First name"
+  last_name: "Last name"
+  email: "email"
+  password: "password"
+  password_confirmation: "Password confirmation"
+  posts: "Posts" 
+  followers: "Followers"
+  followings: "Followings"
+  edit_profile: "Edit profile"
+  website: "website"
+  image: "image"
+  current_password: "Current password"
+  description: "Description"
+  delete_account: "Cancel account"
+  account_not_found: "Account not found"
+#управление
+  update: "update"
+  back: "back"

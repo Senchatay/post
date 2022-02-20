@@ -1,0 +1,46 @@
+<head>
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-4">
+            <%if @account.image.present?%>
+                <%= image_tag @account.image.title.url, class: "profile-pic"%> 
+            <%else%>
+                <%= profile_picture @account, 300%>
+             <%end%>
+        </div>
+        <div class="col-8" id="leftside" >
+            <h1> <%= @account.full_name %> 
+            <%= link_to t(:edit_profile),edit_account_registration_url, class: "btn btn-secondary" if can_edit_profile?(@account.id)%></h1>
+            <div class="row profile-stats">
+                <div class="col-4"><%= @account.posts.count %> <%=t :posts%> </div>
+                <div class="col-4"><%= @account.total_followers %> <%=t :followers%> </div>
+                <div class="col-4"> <%= @account.total_following %> <%=t :followings%></div>
+                
+            </div>
+            <p> <%= @account.full_name %> </p>
+            <p> <%= simple_format @account.description%> </p>
+            <p> <%= link_to @account.website if @account.website.present? %> </p>
+        </div>
+    </div>
+    <div class="row profile-posts">
+        <% @posts.each do |post|%>
+            <div class="col-4" >
+                <div class="insta-post">
+                    <%= image_tag post.image.url, class: 'img img-fluid' %>
+<%
+=begin%>
+                     
+                    <div class="post-meta">
+                        <p><strong><%= post.title %></strong><br/>
+                        <%= post.text %></p>
+                    </div> 
+<%
+=end%>
+                </div>
+            </div>
+        <% end %>
+    </div>
+</div>
+</body>
