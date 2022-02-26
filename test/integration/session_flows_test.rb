@@ -5,7 +5,6 @@ class SessionFlowsTest < ActionDispatch::IntegrationTest
     password = Faker::Number.number(digits: 6)
 
     username= Faker::Lorem.word
-    account = Account.new(email: 'example@mail.ru', password: 'password') 
 
     post account_session_url, params: {email: 'example@mail.ru', password: 'password', remember_me: 0}
 

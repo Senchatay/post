@@ -21,7 +21,7 @@
             </div>
             <p> <%= @account.full_name %> </p>
             <p> <%= simple_format @account.description%> </p>
-            <p> <%= link_to @account.website if @account.website.present? %> </p>
+            <p> <%= link_to @account.website, @account.website if @account.website.present? %> </p>
         </div>
     </div>
     <div class="row profile-posts">
