@@ -9,11 +9,16 @@
 - Создание, удаление, редактирование аккаунтов.
 - Возможность менять локализацию с главной страницы.
 
-Для установки: 
-- $git clone [путь до этого проекта]
-- $bundle
-- $rails db:migrate
-- $rails css:install:bootstrap
+## Инструкция для установки:
+- Загрузить проект из репозитория: 
+```bash
+git clone git@github.com:Senchatay/post.git
+```
+- Запустить проект на `localhost:3000`:
+```bash
+docker-compose build
+docker-compose run --rm -p 3000:3000 app
+```
 
 ## Изображения:
 ### Авторизация
