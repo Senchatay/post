@@ -4,4 +4,5 @@ import "controllers"
 import 'bootstrap'
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks import * as bootstrap from "bootstrap"
+//= require turbolinks
+import * as bootstrap from "bootstrap"
