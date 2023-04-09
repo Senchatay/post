@@ -4,6 +4,7 @@ WORKDIR /usr/src/app
 COPY package*.json yarn.lock ./
 
 RUN npm install
+ENV PATH /usr/src/node_modules/.bin:$PATH
 
 COPY . .
 RUN yarn build:css

@@ -5,7 +5,11 @@ services:
     ports:
       - "3000:3000"
     command: rails s -b 0.0.0.0
-    volumes:
-      - .:/usr/src/app
     environment:
       - RAILS_ENV=development
+    # volumes:
+    #   - .:/usr/src/app
+  builder:
+    build:
+      context: .
+      target: builder
