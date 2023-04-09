@@ -17,7 +17,7 @@ git clone git@github.com:Senchatay/post.git
 - Запустить проект на `localhost:3000`:
 ```bash
 docker-compose build
-docker-compose run --rm -p 3000:3000 app
+docker-compose up
 ```
 
 ## Изображения:
